@@ -7,7 +7,7 @@ import Game from '../components/Game'
 
 //Styling and animations
 import { motion } from 'framer-motion'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
         dispatch(loadGames());
     }, [dispatch])
 
-    const { popular, newGames, upcoming } = useSelector((state) => state.games);
+    const { upcoming } = useSelector((state) => state.games);
 
     return (
         <motion.div className='game-list'>
