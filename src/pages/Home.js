@@ -4,6 +4,7 @@ import { loadGames } from '../actions/gamesAction'
 
 //Components
 import Game from '../components/Game'
+import GameDetails from '../components/GameDetails'
 
 //Styling and animations
 import { motion } from 'framer-motion'
@@ -21,6 +22,7 @@ const Home = () => {
 
     return (
         <motion.div className='game-list'>
+            <GameDetails />
             <h2>Upcoming</h2>
             <motion.div className='games'>
                 {upcoming.map(game => (
