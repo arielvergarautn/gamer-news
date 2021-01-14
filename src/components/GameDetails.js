@@ -11,7 +11,7 @@ const GameDetails = () => {
     return (
         <motion.div className="card-shadow">
             {
-                game.id && <div className="details">
+                <div className="details">
                     <div className="stats">
                         <div className="rating">
                             <h3>{game.name}</h3>
