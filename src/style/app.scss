@@ -40,6 +40,10 @@ a{
     color: #333;
 }
 
+img{
+    display: block;
+}
+
 //Partials
 @import 'home';
 @import 'game';
