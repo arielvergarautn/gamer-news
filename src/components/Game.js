@@ -9,6 +9,9 @@ import { loadGameDetails } from '../actions/gameDetailsAction'
 //Route
 import { Link } from 'react-router-dom'
 
+//Util
+import { smallImage } from '../util'
+
 const Game = ({ id, name, released, image }) => {
     const dispatch = useDispatch();
     const loadGameDetailsHandler = () => {
@@ -20,7 +23,7 @@ const Game = ({ id, name, released, image }) => {
             <Link to={`/game/${id}`}>
                 <h3>{name}</h3>
                 <p>{released}</p>
-                <img src={image} alt="" />
+                <img src={smallImage(image, '640')} alt="" />
             </Link>
         </motion.div>
     )
