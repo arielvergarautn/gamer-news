@@ -24,7 +24,7 @@ const Home = () => {
         dispatch(loadGames());
     }, [dispatch])
 
-    const { popular, newGames, upcoming } = useSelector((state) => state.games);
+    const { popular, newGames, upcoming, searched } = useSelector((state) => state.games);
 
     return (
         <motion.div className='game-list'>
@@ -34,6 +34,19 @@ const Home = () => {
                         pathId && <GameDetails pathId={pathId} />
                     }
                 </AnimatePresence>
+                {
+                    searched && (
+                        <>
+                            <h2> Searched games: {searched.length}</h2>
+                            <motion.div className='games'>
+                                {searched.map(game => (
+                                    <Game key={game.id} name={game.name} released={game.released} id={game.id} image={game.background_image} />
+                                ))}
+                            </motion.div>
+                        </>
+                    )
+                }
+
                 <h2>Upcoming</h2>
                 <motion.div className='games'>
                     {upcoming.map(game => (
@@ -53,7 +66,7 @@ const Home = () => {
                     ))}
                 </motion.div>
             </AnimateSharedLayout>
-        </motion.div>
+        </motion.div >
     )
 }
 

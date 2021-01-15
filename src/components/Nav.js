@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //Animations
 import { motion } from 'framer-motion'
@@ -10,6 +10,7 @@ import logo from '../img/logo.svg'
 import Search from './Search'
 
 const Nav = () => {
+
     return (
         <motion.nav className='nav'>
             <motion.div className="logo">
