@@ -1,6 +1,6 @@
 //Components and pages
 import Home from "./pages/Home";
-
+import Nav from './components/Nav'
 //Style
 import './style/app.scss'
 
@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Route component={Home} path={['/game/{id}', '/']} />
     </div>
   );

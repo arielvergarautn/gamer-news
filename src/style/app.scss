@@ -40,6 +40,11 @@ a{
     color: #333;
 }
 
+input{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
 img{
     display: block;
 }
@@ -47,4 +52,5 @@ img{
 //Partials
 @import 'home';
 @import 'game';
-@import 'gameDetail'
+@import 'gameDetail';
+@import 'nav';
