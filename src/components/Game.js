@@ -1,6 +1,7 @@
 import React from 'react'
 //Styling and animations
 import { motion } from 'framer-motion'
+import { popup } from '../animations'
 
 //Redux
 import { useDispatch } from 'react-redux'
@@ -22,7 +23,7 @@ const Game = ({ id, name, released, image }) => {
         dispatch(loadGameDetails(id));
     }
     return (
-        <motion.div className='game' onClick={loadGameDetailsHandler} layoutId={stringPathId}>
+        <motion.div className='game' onClick={loadGameDetailsHandler} layoutId={stringPathId} variants={popup} initial='hidden' animate='show'>
             <Link to={`/game/${id}`}>
                 <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
                 <p>{released}</p>
