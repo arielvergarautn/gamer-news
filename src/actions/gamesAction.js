@@ -3,6 +3,10 @@ import { popularGamesUrl, upcomingGamesUrl, newGamesUrl, searchedGameUrl } from 
 
 //Action creator
 export const loadGames = () => async (dispatch) => {
+    //IS LOADING
+    dispatch({
+        type: 'LOADING_GAMES'
+    });
     //FETCH AXIOS
     const popularGamesData = await axios.get(popularGamesUrl());
     const upcomingGamesData = await axios.get(upcomingGamesUrl());
@@ -18,6 +22,10 @@ export const loadGames = () => async (dispatch) => {
 }
 
 export const fetchSearch = (game_name) => async (dispatch) => {
+    //IS LOADING
+    dispatch({
+        type: 'LOADING_GAMES'
+    });
     //FETCH AXIOS
     const searchedGamesData = await axios.get(searchedGameUrl(game_name));
     dispatch({

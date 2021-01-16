@@ -26,13 +26,22 @@ const Home = () => {
     }, [dispatch])
 
     const { popular, newGames, upcoming, searched } = useSelector((state) => state.games);
+    const { game } = useSelector((state) => state.gameDetails);
+
+    const loadGame = (game) => {
+        const isActive = game.id.toString() === pathId;
+
+        return (
+            <Game key={game.id} name={game.name} released={game.released} id={game.id} image={game.background_image} active={isActive} />
+        )
+    }
 
     return (
         <motion.div className='game-list' variants={fadeIn} initial='hidden' animate='show'>
             <AnimateSharedLayout type='crossfade'>
                 <AnimatePresence>
                     {
-                        pathId && <GameDetails pathId={pathId} />
+                        pathId && game.id && <GameDetails pathId={pathId} />
                     }
                 </AnimatePresence>
                 {
@@ -41,7 +50,7 @@ const Home = () => {
                             <h2> Searched games: {searched.length}</h2>
                             <motion.div className='games'>
                                 {searched.map(game => (
-                                    <Game key={game.id} name={game.name} released={game.released} id={game.id} image={game.background_image} />
+                                    loadGame(game)
                                 ))}
                             </motion.div>
                         </>
@@ -51,19 +60,19 @@ const Home = () => {
                 <h2>Upcoming</h2>
                 <motion.div className='games'>
                     {upcoming.map(game => (
-                        <Game key={game.id} name={game.name} released={game.released} id={game.id} image={game.background_image} />
+                        loadGame(game)
                     ))}
                 </motion.div>
                 <h2>Popular games</h2>
                 <motion.div className='games'>
                     {popular.map(game => (
-                        <Game key={game.id} name={game.name} released={game.released} id={game.id} image={game.background_image} />
+                        loadGame(game)
                     ))}
                 </motion.div>
                 <h2>New games</h2>
                 <motion.div className='games'>
                     {newGames.map(game => (
-                        <Game key={game.id} name={game.name} released={game.released} id={game.id} image={game.background_image} />
+                        loadGame(game)
                     ))}
                 </motion.div>
             </AnimateSharedLayout>
