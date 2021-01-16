@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 
-//Animations
-import { motion } from 'framer-motion'
-
 //Redux and Routes
 import { fetchSearch } from '../actions/gamesAction'
 import { useDispatch } from 'react-redux'
@@ -36,7 +33,7 @@ const Search = () => {
     return (
         <form className='search' onSubmit={submitSearchHandler}>
             <input type="text" onChange={inputHandler} value={textInput} />
-            {/* <img src={close} onClick={clearSearched} /> */}
+            <img src={close} onClick={clearSearched} alt='close' />
             <button type='submit' onClick={submitSearchHandler}>Search</button>
         </form>
     )

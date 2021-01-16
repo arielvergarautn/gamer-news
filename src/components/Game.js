@@ -19,16 +19,18 @@ const Game = ({ id, name, released, image, active }) => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (active) {
-            loadGameDetailsHandler();
-        }
-    }, [])
-
     const loadGameDetailsHandler = () => {
         document.body.style.overflow = 'hidden';
         dispatch(loadGameDetails(id));
     }
+
+    useEffect(() => {
+        if (active) {
+            loadGameDetailsHandler();
+        }
+    }, [active])
+
+
     return (
         <motion.div className='game' onClick={loadGameDetailsHandler} layoutId={stringPathId} variants={popup} initial='hidden' animate='show'>
             <Link to={`/game/${id}`}>

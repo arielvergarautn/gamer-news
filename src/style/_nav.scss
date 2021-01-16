@@ -36,3 +36,19 @@
         margin: 1rem 0.5rem;
     }
 }
+
+.search{
+    img{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav{
+        padding: 1rem 1rem;
+        input{
+            width: 60%;
+        }
+    }
+    
+  }
