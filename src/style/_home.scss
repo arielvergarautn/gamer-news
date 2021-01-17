@@ -29,6 +29,9 @@
         h2 {
             text-align: center;
         }
+        .game{
+            border-radius: 0;
+        }
     }
   
 }
@@ -36,10 +39,9 @@
 @media only screen and (max-width: 400px) {
     .game-list {
         padding: 0rem 0rem;
+        
     }
-    .game{
-        border-radius: 0;
-    }
+    
     
 }
 

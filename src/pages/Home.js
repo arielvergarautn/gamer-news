@@ -22,6 +22,7 @@ const Home = () => {
     //Fetch games
     const dispatch = useDispatch();
     useEffect(() => {
+        document.body.style.overflow = 'auto';
         dispatch(loadGames());
     }, [dispatch])
 

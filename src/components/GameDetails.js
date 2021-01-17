@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 //Animations
 import { motion } from 'framer-motion';
 //Redux
@@ -22,6 +22,12 @@ const GameDetails = ({ pathId }) => {
 
     const { screenShot, game, isLoading } = useSelector(state => state.gameDetails)
     const history = useHistory();
+
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'auto';
+        }
+    }, [])
 
     const exitDetailsHandler = (e) => {
         const element = e.target;
