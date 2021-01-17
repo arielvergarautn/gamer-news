@@ -26,9 +26,10 @@ const Game = ({ id, name, released, image, active }) => {
 
     useEffect(() => {
         if (active) {
-            loadGameDetailsHandler();
+            document.body.style.overflow = 'hidden';
+            dispatch(loadGameDetails(id));
         }
-    }, [active])
+    }, [active, id, dispatch])
 
 
     return (
