@@ -49,6 +49,18 @@ img{
     display: block;
 }
 
+@media only screen and (max-width: 768px) {
+    *{
+      font-size: 80%;  
+    }
+    
+  }
+  @media only screen and (max-width: 400px) {
+    *{
+        font-size: 60%;  
+      }
+}
+
 //Partials
 @import 'home';
 @import 'game';

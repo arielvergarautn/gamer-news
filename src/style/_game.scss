@@ -11,3 +11,11 @@
         object-fit: cover;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .game {
+        h3{
+            padding: 1rem;
+        }
+    }
+}
